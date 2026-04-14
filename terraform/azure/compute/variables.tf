@@ -27,13 +27,25 @@ variable "private_subnet_id" {
 variable "vm_sku" {
   description = "VM size for the Scale Set instances"
   type        = string
-  default     = "Standard_D2s_v3"
+  default     = "Standard_D4s_v3"
 }
 
 variable "instance_count" {
   description = "Number of VM instances in the Scale Set"
   type        = number
-  default     = 2
+  default     = 3
+}
+
+variable "os_disk_size_gb" {
+  description = "OS disk size in GB for VM instances"
+  type        = number
+  default     = 128
+}
+
+variable "enable_accelerated_networking" {
+  description = "Enable accelerated networking on VM NICs"
+  type        = bool
+  default     = true
 }
 
 variable "admin_username" {

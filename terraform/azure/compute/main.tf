@@ -91,12 +91,13 @@ resource "azurerm_linux_virtual_machine_scale_set" "app" {
   os_disk {
     storage_account_type = "Premium_LRS"
     caching              = "ReadWrite"
-    disk_size_gb         = 64
+    disk_size_gb         = var.os_disk_size_gb
   }
 
   network_interface {
-    name    = "app-nic"
-    primary = true
+    name                      = "app-nic"
+    primary                   = true
+    enable_accelerated_networking = var.enable_accelerated_networking
 
     ip_configuration {
       name                                   = "internal"
