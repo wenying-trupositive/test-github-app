@@ -37,10 +37,3 @@ vm_sku                        = "Standard_D4s_v3"
 instance_count                = 3
 os_disk_size_gb               = 128
 enable_accelerated_networking = true
-
-# Azure Database — PostgreSQL Flexible Server
-azure_db_sku_name            = "GP_Standard_D4s_v3"
-azure_db_storage_mb          = 131072
-azure_db_backup_retention    = 14
-azure_db_geo_redundant       = true
-azure_db_high_availability   = "ZoneRedundant"
