@@ -34,4 +34,4 @@ backup_retention_days_s3 = 365
 azure_location       = "East US"
 resource_group_name  = "myapp-prod-rg"
 vm_sku               = "Standard_D8s_v5"
-instance_count       = 3
+instance_count       = 5
