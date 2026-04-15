@@ -33,5 +33,5 @@ backup_retention_days_s3 = 90
 # Azure
 azure_location       = "East US"
 resource_group_name  = "myapp-staging-rg"
-vm_sku               = "Standard_D2s_v5"
+vm_sku               = "Standard_D2s_v3"
 instance_count       = 2
