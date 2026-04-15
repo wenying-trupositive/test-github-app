@@ -79,7 +79,7 @@ resource "aws_db_instance" "main" {
   identifier        = "${var.environment}-postgres"
   engine            = "postgres"
   engine_version    = var.engine_version
-  instance_class    = var.instance_class
+  instance_class    = "db.m5.large"
   allocated_storage = var.allocated_storage
   max_allocated_storage = var.max_allocated_storage
   storage_type      = "gp3"

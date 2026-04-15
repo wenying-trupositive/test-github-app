@@ -114,7 +114,7 @@ resource "aws_lb_listener" "http" {
 resource "aws_launch_template" "app" {
   name_prefix   = "${var.environment}-app-"
   image_id      = var.ami_id
-  instance_type = var.instance_type
+  instance_type = "m5.large"
 
   network_interfaces {
     associate_public_ip_address = false
