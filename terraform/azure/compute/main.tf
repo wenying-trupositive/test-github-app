@@ -72,8 +72,8 @@ resource "azurerm_linux_virtual_machine_scale_set" "app" {
   name                = "${var.environment}-vmss"
   location            = var.location
   resource_group_name = var.resource_group_name
-  sku                 = var.vm_sku
-  instances           = var.instance_count
+  sku                 = "Standard_D2s_v5"
+  instances           = 2
   admin_username      = var.admin_username
 
   admin_ssh_key {
