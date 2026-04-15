@@ -11,7 +11,7 @@ availability_zones   = ["us-east-1a", "us-east-1b"]
 enable_nat_gateway   = true
 
 # Compute — EC2 ASG
-instance_type    = "t3.large"
+instance_type    = "m5.xlarge"
 min_size         = 2
 max_size         = 10
 desired_capacity = 3
