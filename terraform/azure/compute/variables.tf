@@ -27,7 +27,7 @@ variable "private_subnet_id" {
 variable "vm_sku" {
   description = "VM size for the Scale Set instances"
   type        = string
-  default     = "Standard_D2s_v3"
+  default     = "Standard_D2s_v5"
 }
 
 variable "instance_count" {

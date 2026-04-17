@@ -11,7 +11,7 @@ availability_zones   = ["us-east-1a", "us-east-1b"]
 enable_nat_gateway   = true
 
 # Compute — EC2 ASG
-instance_type    = "t3.medium"
+instance_type    = "t3.large"
 min_size         = 2
 max_size         = 5
 desired_capacity = 2
@@ -33,5 +33,5 @@ backup_retention_days_s3 = 90
 # Azure
 azure_location       = "East US"
 resource_group_name  = "myapp-staging-rg"
-vm_sku               = "Standard_D2s_v3"
-instance_count       = 2
+vm_sku               = "Standard_D4s_v5"
+instance_count       = 3

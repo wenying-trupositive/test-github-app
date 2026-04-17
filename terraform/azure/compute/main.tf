@@ -2,7 +2,7 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "~> 3.0"
+      version = "~> 4.0"
     }
   }
 }
@@ -83,15 +83,15 @@ resource "azurerm_linux_virtual_machine_scale_set" "app" {
 
   source_image_reference {
     publisher = "Canonical"
-    offer     = "0001-com-ubuntu-server-jammy"
-    sku       = "22_04-lts-gen2"
+    offer     = "ubuntu-24_04-lts"
+    sku       = "server-gen2"
     version   = "latest"
   }
 
   os_disk {
     storage_account_type = "Premium_LRS"
     caching              = "ReadWrite"
-    disk_size_gb         = 64
+    disk_size_gb         = 128
   }
 
   network_interface {
@@ -105,6 +105,12 @@ resource "azurerm_linux_virtual_machine_scale_set" "app" {
       load_balancer_backend_address_pool_ids = [azurerm_lb_backend_address_pool.main.id]
     }
   }
+
+  boot_diagnostics {
+    storage_account_uri = ""
+  }
+
+  health_probe_id = azurerm_lb_probe.http.id
 
   automatic_os_upgrade_policy {
     enable_automatic_os_upgrade = true
